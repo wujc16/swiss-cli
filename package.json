@@ -1,12 +1,17 @@
 {
   "name": "swiss-cli",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "swiss cli is a swissknife like cli for react project generation.",
   "main": "src/index.js",
   "bin": {
     "swiss-cli": "./bin/index.js"
   },
   "repository": "https://github.com/wujc16/swiss-cli",
+  "keywords": [
+    "react",
+    "webpack",
+    "react-cli"
+  ],
   "scripts": {
     "build": "rollup -c rollup.config.js"
   },
