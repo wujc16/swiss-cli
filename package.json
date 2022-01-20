@@ -6,6 +6,7 @@
   "bin": {
     "swiss-cli": "./bin/index.js"
   },
+  "repository": "https://github.com/wujc16/swiss-cli",
   "scripts": {
     "build": "rollup -c rollup.config.js"
   },

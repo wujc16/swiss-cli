@@ -6,7 +6,7 @@ swiss-cli 是一个基于 webpack 的 react 脚手架。
 
 使用前，需要首先全局安装 swiss-cli 脚手架：
 ```shell
-npm install @byted/swiss-cli -g
+npm install swiss-cli -g
 ```
 
 安装完成后，输入下面命令：
