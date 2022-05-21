@@ -1,10 +1,11 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+// 这个插件是用来讲 css 打包成单独文件的
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   entry: path.resolve(__dirname, '../src/index.ts'),
   output: {
-    path: path.resolve(__dirname, '../dist'),
     filename: '[name].[hash].js'
   },
   resolve: {
@@ -27,12 +28,40 @@ module.exports = {
           }
         }
       },
+      // css 不开启 css module，可以用来写全局的样式
+      {
+        test: /\.css$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader'
+        ]
+      },
+      // sass 默认开启 css module
+      {
+        test: /\.scss$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          // 这个 loader 是用来针对 css module 生成 d.ts 文件的
+          '@teamsupercell/typings-for-css-modules-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: {
+                auto: filePath => /\.scss$/.test(filePath),
+                localIdentName: '__[local]__[hash:base64:5]'
+              },
+            }
+          },
+          'sass-loader'
+        ]
+      },
     ]
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, '../index.html'),
       filename: 'index.html'
-    })
+    }),
+    new MiniCssExtractPlugin(),
   ]
 };
