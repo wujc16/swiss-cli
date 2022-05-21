@@ -3,6 +3,7 @@ import Header from '@components/Header';
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { routers } from './router';
+import 'antd/dist/antd.css';
 
 export default function App() {
   return (

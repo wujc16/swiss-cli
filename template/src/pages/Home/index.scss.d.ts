@@ -2,6 +2,7 @@ declare namespace IndexScssNamespace {
   export interface IIndexScss {
     calculate: string;
     home: string;
+    numberInput: string;
   }
 }
 
