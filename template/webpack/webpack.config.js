@@ -28,8 +28,17 @@ module.exports = {
           }
         }
       },
+      // css 不开启 css module，可以用来写全局的样式
       {
-        test: /\.scss$|\.css$/,
+        test: /\.css$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader'
+        ]
+      },
+      // sass 默认开启 css module
+      {
+        test: /\.scss$/,
         use: [
           MiniCssExtractPlugin.loader,
           // 这个 loader 是用来针对 css module 生成 d.ts 文件的
@@ -38,8 +47,8 @@ module.exports = {
             loader: 'css-loader',
             options: {
               modules: {
-                auto: (filePath) => /\.scss$|\.css$/.test(filePath),
-                localIdentName: '[local]__[hash:base64:5]'
+                auto: filePath => /\.scss$/.test(filePath),
+                localIdentName: '__[local]__[hash:base64:5]'
               },
             }
           },
