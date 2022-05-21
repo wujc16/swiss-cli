@@ -1,6 +1,6 @@
 {
   "name": "swiss-cli",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "swiss cli is a swissknife like cli for react project generation.",
   "main": "src/index.js",
   "bin": {
