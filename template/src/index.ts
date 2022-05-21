@@ -4,5 +4,5 @@ import App from './App';
 
 ReactDom.render(
   React.createElement(App),
-  document.querySelector('#root')
+  document.querySelector('#root'),
 );

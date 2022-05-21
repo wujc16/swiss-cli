@@ -7,12 +7,12 @@ import 'antd/dist/antd.css';
 
 export default function App() {
   return (
-    <BrowserRouter basename='/'>
+    <BrowserRouter basename="/">
       <Header />
       <div style={{ height: '500px' }}>
         <Routes>
           {
-            routers.map(item => (
+            routers.map((item) => (
               <Route path={item.path} key={item.path} element={<item.component />} />
             ))
           }
@@ -20,5 +20,5 @@ export default function App() {
       </div>
       <Footer />
     </BrowserRouter>
-  )
+  );
 }

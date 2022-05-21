@@ -5,5 +5,5 @@ export default function Footer() {
     <div>
       Webpack React Template
     </div>
-  )
+  );
 }
