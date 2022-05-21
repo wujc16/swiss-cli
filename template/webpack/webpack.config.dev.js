@@ -14,6 +14,6 @@ module.exports = merge(baseWebpackConfig, {
     compress: true,
     // index.html is likely to be served in place of any 404 response, otherwise
     // react-router-dom may not work well
-    historyApiFallback: true
-  }
+    historyApiFallback: true,
+  },
 });

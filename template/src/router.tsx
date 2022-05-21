@@ -35,7 +35,7 @@ const routers: RouterItem[] = [
       loader: () => import(/* webpackChunkName: "about" */'@pages/About'),
       loading: LoadingComp,
     }),
-  }
+  },
 ];
 
 export { routers };

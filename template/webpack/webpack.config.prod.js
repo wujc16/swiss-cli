@@ -1,8 +1,8 @@
 const { merge } = require('webpack-merge');
-const baseWebpackConfig = require('./webpack.config');
 const path = require('path');
 const fs = require('fs');
-const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const baseWebpackConfig = require('./webpack.config');
 
 // 之前先删除掉 dist 文件夹以及里面所有的东西
 const outputPath = path.resolve(__dirname, '../dist');
@@ -15,6 +15,7 @@ module.exports = merge(baseWebpackConfig, {
   },
   optimization: {
     minimizer: [
+      // 用来进行 css 压缩的插件
       new CssMinimizerPlugin(),
     ],
   },
