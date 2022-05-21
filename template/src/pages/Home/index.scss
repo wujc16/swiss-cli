@@ -2,6 +2,12 @@
   padding: 24px;
 
   .calculate {
-    background-color: rebeccapurple;
+    display: flex;
+    align-items: center;
+    margin-top: 24px;
+
+    .numberInput {
+      margin: 0 12px;
+    }
   }
 }
